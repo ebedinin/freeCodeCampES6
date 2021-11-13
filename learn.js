@@ -1,19 +1,17 @@
-const s = [5, 7, 2];
+function freezeObj() {
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+    Object.freeze(MATH_CONSTANTS);
+    // Only change code below this line
 
-function editInPlace() {
-    const a = s[2], b = s[1], c = s[0];
-    s[0] = a;
-    s[1] = c;
-    s[2] = b;
+
+    // Only change code above this line
+    try {
+        MATH_CONSTANTS.PI = 99;
+    } catch(ex) {
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
 }
-
-console.log(s);
-editInPlace();
-console.log(s);
-
-
-/*
-
-s.sort((a, b) => {
-    return a > b
-});*/
+const PI = freezeObj();
